@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 
 
 type StateTypes = {
@@ -12,7 +12,8 @@ type ActionTypes =
   | { type: "SET_FIRST_NAME"; payload: string }
   | { type: "SET_LAST_NAME"; payload: string }
   | { type: "SET_MOBILE_NUMBER"; payload: string }
-  | { type: "SET_SCHOOL"; payload: string };
+  | { type: "SET_SCHOOL"; payload: string }
+  | { type: "SET_ARRAY", payload: StateTypes  };
 
 
 const reducer = (state: StateTypes, action: ActionTypes) => {
@@ -25,6 +26,10 @@ const reducer = (state: StateTypes, action: ActionTypes) => {
       return { ...state, mobileNumber: action.payload }
     case "SET_SCHOOL":
       return { ...state, school: action.payload }
+      case "SET_ARRAY":
+        return {...action.payload}
+    default:
+      return state
   }
 }
 
@@ -35,6 +40,12 @@ const UseReducerHook = () => {
     mobileNumber: "",
     school: "",
   });
+  const [formDataArray, setFormDataArray] = useState<StateTypes[]>([]);
+
+  const handleSubmitFormData = () => {
+    setFormDataArray([...formDataArray, formData])
+    setFormData({ type: "SET_ARRAY", payload: { firstName: "", lastName: "", mobileNumber: "", school: "" } });
+  }
 
 
   return (
@@ -71,7 +82,17 @@ const UseReducerHook = () => {
       />
       <br />
 
-      <button onClick={() => console.log(formData)}>Set Form Data</button>
+      <button onClick={handleSubmitFormData}>Set Form Data</button>
+
+
+      <h3>Form Data Array:</h3>
+      <ul>
+        {formDataArray.map((data, index) => (
+          <li key={index}>
+            {data.firstName} {data.lastName}, {data.mobileNumber}, {data.school}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
