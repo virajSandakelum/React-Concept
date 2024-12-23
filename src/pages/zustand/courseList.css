@@ -1,0 +1,58 @@
+.course-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.course-item.completed {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.course-item.not-completed {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.course-info {
+    display: flex;
+    align-items: center;
+}
+
+.course-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.course-name {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.delete-button {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #495057;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #e2e6ea;
+}
