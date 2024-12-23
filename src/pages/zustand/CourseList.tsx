@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import useCourseStore from "../../zustand/CourseStore";
-import "./CourseList.css"; // Import the external CSS file
+import "./styles/courseList.css"; 
 
-// Define the course type for strong typing
+
 interface Course {
     id: number;
     name: string;
@@ -11,9 +11,9 @@ interface Course {
 
 const CourseList: React.FC = () => {
     // Typed Zustand selectors
-    const courses = useCourseStore((state) => state.courses); // Select courses
-    const removeCourse = useCourseStore((state) => state.removeCourse); // Select removeCourse
-    const toggleCourseStatus = useCourseStore((state) => state.toggleCourseStatus); // Select toggleCourseStatus
+    const courses = useCourseStore((state) => state.courses); 
+    const removeCourse = useCourseStore((state) => state.removeCourse);
+    const toggleCourseStatus = useCourseStore((state) => state.toggleCourseStatus); 
 
     return (
         <ul className="course-list">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useCourseStore from "../../zustand/CourseStore";
-import "./courseForm.css"; 
+import "./styles/courseForm.css"; 
 
 
 const CourseForm: React.FC = () => {
