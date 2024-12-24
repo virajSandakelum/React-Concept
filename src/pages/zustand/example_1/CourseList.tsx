@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import useCourseStore from "../../zustand/CourseStore";
+import useCourseStore from "../../../zustand/example_1/CourseStore";
 import "./styles/courseList.css"; 
 
 

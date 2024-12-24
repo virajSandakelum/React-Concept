@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import CourseService from "../services/courseService"; 
+import CourseService from "../../services/courseService"; 
 
 
 interface Course {
