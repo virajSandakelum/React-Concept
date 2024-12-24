@@ -11,6 +11,8 @@ const CatBox = () => {
     const immerIncreaseBigcats = useCatStore(state => state.immerIncreaseBigcats)
     const immerIncreaseSmallCats = useCatStore(state => state.immerIncreaseSmallCats)
 
+    const catSummary = useCatStore(state => state.summary)
+
   return (
     <div>
         <h1>Cats</h1>
@@ -30,6 +32,10 @@ const CatBox = () => {
             <button onClick={immerIncreaseBigcats}>Immer add big cats</button>
             <button onClick={immerIncreaseSmallCats}>Immer add small cats</button>
         </div>
+
+        <br/>
+
+        <h3>{catSummary()}</h3>
     </div>
   )
 }

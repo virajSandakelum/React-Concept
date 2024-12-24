@@ -15,12 +15,13 @@ type TCateStore = {
     increaseSmallCats: () => void;
     immerIncreaseBigcats: () => void
     immerIncreaseSmallCats: () => void
+    summary:() => string
 };
 
 export const useCatStore = create<TCateStore>()
     (
         immer(
-            (set) => ({
+            (set, get) => ({
                 cats: {
                     bigCats: 0,
                     smallCats: 0,
@@ -50,10 +51,17 @@ export const useCatStore = create<TCateStore>()
                 immerIncreaseSmallCats: () =>
                     set((state) => {
                         state.immerCats.immerSmallCats++
-                    })
+                    }),
+                summary: () => {
+                    // const total = state.cats.bigCats + state.cats.smallCats // in here cannot get state, but using the get(), we can get
+                    const total = get().cats.bigCats + get().cats.smallCats + get().immerCats.immerBigCats + get().immerCats.immerSmallCats
+                    return `There ara ${total} cats in total.`;
+                }
             })
         )
     );
 
 
 // https://www.npmjs.com/package/immer
+
+// by using the immer middleware - can update immutable objects as mutable object
