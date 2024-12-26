@@ -65,3 +65,5 @@ export const useCatStore = create<TCateStore>()
 // https://www.npmjs.com/package/immer
 
 // by using the immer middleware - can update immutable objects as mutable object
+
+// https://www.youtube.com/watch?v=DCCCcxZkIB4

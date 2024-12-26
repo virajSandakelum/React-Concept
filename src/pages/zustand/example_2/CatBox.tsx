@@ -1,17 +1,28 @@
 import { useCatStore } from "../../../zustand/example_2/CatStore"
 
 const CatBox = () => {
-    const bigCats = useCatStore((state) => state.cats.bigCats)
-    const smallCats = useCatStore((state) => state.cats.smallCats)
-    const increaseBigCats = useCatStore(state => state.increaseBigcats)
-    const increaseSmallCats = useCatStore(state => state.increaseSmallCats)
+    // const bigCats = useCatStore((state) => state.cats.bigCats)
+    // const smallCats = useCatStore((state) => state.cats.smallCats)
+    // const increaseBigCats = useCatStore(state => state.increaseBigcats)
+    // const increaseSmallCats = useCatStore(state => state.increaseSmallCats)
 
-    const immerbigCats = useCatStore((state) => state.immerCats.immerBigCats)
-    const immerSmallCats = useCatStore((state) => state.immerCats.immerSmallCats)
-    const immerIncreaseBigcats = useCatStore(state => state.immerIncreaseBigcats)
-    const immerIncreaseSmallCats = useCatStore(state => state.immerIncreaseSmallCats)
+    // const immerBigCats = useCatStore((state) => state.immerCats.immerBigCats)
+    // const immerSmallCats = useCatStore((state) => state.immerCats.immerSmallCats)
+    // const immerIncreaseBigcats = useCatStore(state => state.immerIncreaseBigcats)
+    // const immerIncreaseSmallCats = useCatStore(state => state.immerIncreaseSmallCats)
 
-    const catSummary = useCatStore(state => state.summary)
+    // const catSummary = useCatStore(state => state.summary)
+
+    const {
+      cats:{bigCats, smallCats},
+      immerCats:{immerBigCats, immerSmallCats},
+      increaseBigcats, 
+      increaseSmallCats, 
+      immerIncreaseBigcats, 
+      immerIncreaseSmallCats, 
+      summary
+    } = useCatStore();
+
 
   return (
     <div>
@@ -19,14 +30,14 @@ const CatBox = () => {
         <p>Big Cats: {bigCats}</p>
         <p>Small Cats: {smallCats}</p>
         <div>
-            <button onClick={increaseBigCats}>add big cats</button>
+            <button onClick={increaseBigcats}>add big cats</button>
             <button onClick={increaseSmallCats}>add small cats</button>
         </div>
 
         <br/>
 
         <h1>Immer Apply Cats</h1>
-        <p>Immer Big Cats: {immerbigCats}</p>
+        <p>Immer Big Cats: {immerBigCats}</p>
         <p>Immer Small Cats: {immerSmallCats}</p>
         <div>
             <button onClick={immerIncreaseBigcats}>Immer add big cats</button>
@@ -35,7 +46,7 @@ const CatBox = () => {
 
         <br/>
 
-        <h3>{catSummary()}</h3>
+        <h3>{summary()}</h3>
     </div>
   )
 }
