@@ -1,5 +1,5 @@
 // CourseService.ts
-const API_ENDPOINT = "https://dummyapi.com/courses";
+// const API_ENDPOINT = "https://dummyapi.com/courses";
 
 // Simulated API responses
 const dummyCourses = [

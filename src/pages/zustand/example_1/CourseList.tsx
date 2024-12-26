@@ -3,11 +3,11 @@ import useCourseStore from "../../../zustand/example_1/CourseStore";
 import "./styles/courseList.css"; 
 
 
-interface Course {
-    id: number;
-    name: string;
-    completed: boolean;
-}
+// interface Course {
+//     id: number;
+//     name: string;
+//     completed: boolean;
+// }
 
 const CourseList: React.FC = () => {
     // Typed Zustand selectors
