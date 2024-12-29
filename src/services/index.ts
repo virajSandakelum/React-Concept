@@ -1,11 +1,11 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { getLocalStorage, removeLocalStorage } from '../utils/localStorage'
+import { removeLocalStorage } from '../utils/localStorage'
 import { getCurrentLanguage, languageConvert } from '../utils/getCurrentLanguage'
 import useUserDataStore from '../zustand/store/userDataStore';
 
 
-const baseURL: string =
-    (window as any).VITE_BASE_URL || import.meta.env.VITE_BASE_URL
+const baseURL: string = (window as any).VITE_BASE_URL || import.meta.env.VITE_BASE_URL
+
 
 export default async function api(
     method: 'get' | 'post' | 'put' | 'delete' | 'patch',
@@ -43,7 +43,7 @@ export default async function api(
             headers: headers,
         }
 
-        let response
+        let response;
         switch (method) {
             case 'get':
                 response = await axios.get(`${baseURL}${endpoint}`, config)
@@ -63,13 +63,13 @@ export default async function api(
                 )
                 break
             default:
-                throw new Error(`Unsupported HTTP method: ${method}`)
+                throw new Error(`Unsupported HTTP method: ${method}`);
         }
-        return response
+        return response;
     } catch (error) {
         if (axios.isAxiosError(error) && error.response?.status === 401) {
-            console.error('Unauthorized access. Redirecting to login...')
-            removeLocalStorage('access_token')
+            console.error('Unauthorized access. Redirecting to login...');
+            removeLocalStorage('access_token');
             window.location.href = "/session-timeout";
         } else {
             console.error(
@@ -78,6 +78,6 @@ export default async function api(
             )
             window.location.href = "/service-down";
         }
-        throw error
+        throw error;
     }
 }

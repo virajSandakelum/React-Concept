@@ -8,9 +8,6 @@ interface ChildData {
     date_of_birth: Date | null
     school_name: string
     school_id: string
-    // parent_id: number;
-    // approval_level_1: string;
-    // approval_level_2: string;
 }
 
 interface ChildUpdateData {
@@ -30,6 +27,7 @@ class ChildRegistrationService {
     static async registerChildren(children: ChildData[]): Promise<void> {
         const payload: ChildRegistrationRequest = { children }
         const endpoint = `/child`
+
         try {
             const response = await api('post', endpoint, payload)
             return response.data.DATA
