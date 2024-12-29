@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const UseEffectHookExample: React.FC = () => {
+
+const UseEffectHook = () => {
     const [count, setCount] = useState<number>(0);
     const [message, setMessage] = useState<string>("");
 
@@ -18,4 +19,4 @@ const UseEffectHookExample: React.FC = () => {
     );
 };
 
-export default UseEffectHookExample;
+export default UseEffectHook;
