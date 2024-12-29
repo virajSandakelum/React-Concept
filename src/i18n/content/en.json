@@ -1,0 +1,17 @@
+{
+    "languageSelectionPage": {
+        "header ": "Welcome to School Books and Supplies",
+        "prefferedLanguage": "Select Your Preferred Language"
+    },
+    "welcomePage": {
+        "info_1": "To register for the school books and supplies benefit, click <b>\"Register\"</b>.",
+        "info_2": "If you have registered before for school books and supplies benefit, then click <b>\"Login\"</b> after entering your registered mobile number.",
+        "header": "Login to my account",
+        "input_label": "Enter mobile number",
+        "info_3": "Please enter the same mobile number used during the registration process.",
+        "footer_header": "For first time registrations click below.",
+        "login_button": "Login",
+        "register_button": "Register",
+        "error": "Sorry! Something went wrong please try again"
+    }   
+}
