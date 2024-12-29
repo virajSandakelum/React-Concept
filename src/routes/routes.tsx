@@ -21,4 +21,8 @@ export const routesArray = [
             </AuthRoute>
         ),
     },
+    {
+        path: "*",
+        // element: <PageNotFound />,
+    },
 ]
