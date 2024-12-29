@@ -7,11 +7,6 @@ const UseEffectHookExample: React.FC = () => {
     useEffect(() => {
         setMessage(`The count is now ${count}`);
         console.log("Count updated:", count);
-
-        // Cleanup example (optional, in case of side effects like subscriptions)
-        return () => {
-            console.log("Cleanup for count:", count);
-        };
     }, [count]);
 
     return (
