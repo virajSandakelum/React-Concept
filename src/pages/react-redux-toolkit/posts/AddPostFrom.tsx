@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { postAdded } from "./postsSlice";
-import { selectAllUsers } from "../users/usersSlice";
+import { postAdded } from "../../../redux-toolkit/slices/posts/postsSlice"
+import { selectAllUsers } from "../../../redux-toolkit/slices/users/usersSlice"
 
 
 export const AddPostFrom = () => {
@@ -37,7 +37,7 @@ export const AddPostFrom = () => {
                 />
 
                 <label htmlFor="postAuthor">Author: </label>
-                <select name="postAuthor" id="postAuthor" onChange={ (e) => setUserId(e.target.value)}>
+                <select name="postAuthor" id="postAuthor" onChange={(e) => setUserId(e.target.value)}>
                     <option value=""></option>
                     {
                         users.map((user) => (
@@ -46,7 +46,6 @@ export const AddPostFrom = () => {
                             </option>
                         ))
                     }
-
                 </select>
 
                 <label htmlFor="postContent">Content: </label>

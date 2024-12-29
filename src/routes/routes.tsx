@@ -1,25 +1,22 @@
-import { HomeDashboard } from '../pages/HomeDashboard'
-import LanguageSelection from '../pages/LanguageSelection'
 import { AddPostFrom } from '../pages/react-redux-toolkit/posts/AddPostFrom'
 import PostsList from '../pages/react-redux-toolkit/posts/PostsList'
-import WelcomePage from '../pages/WelcomePage'
 import { AuthRoute } from './AuthRoute'
 
 
 export const routesArray = [
     {
         path: '/',
-        element: <LanguageSelection />,
+        element: <AddPostFrom />,
     },
     {
         path: '/welcome',
-        element: <WelcomePage />,
+        // element: <WelcomePage />,
     },
     {
         path: '/home',
         element: (
             <AuthRoute>
-                <HomeDashboard />
+                <AddPostFrom />
             </AuthRoute>
         ),
     },

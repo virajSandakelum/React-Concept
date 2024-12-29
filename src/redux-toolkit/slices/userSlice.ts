@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import jwtDecode from "jwt-decode";
+// import jwtDecode from "jwt-decode";
 
 
 const initialState = {
@@ -21,7 +21,7 @@ export const userSlice = createSlice({
         login: (state, action) => {
             const { token } = action.payload;
             if (token) {
-                const { first_name, last_name, email, role, id } = jwtDecode(token);
+                const { first_name, last_name, email, role, id } = token;
                 state.user.id = id;
                 state.user.first_name = first_name;
                 state.user.last_name = last_name;
@@ -33,7 +33,7 @@ export const userSlice = createSlice({
         session: (state) => {
             let token = localStorage.getItem("token");
             if (token) {
-                const { first_name, last_name, email, role, id } = jwtDecode(token);
+                const { first_name, last_name, email, role, id } = token;
                 state.user.id = id;
                 state.user.first_name = first_name;
                 state.user.last_name = last_name;
