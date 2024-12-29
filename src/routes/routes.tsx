@@ -1,3 +1,4 @@
+import Counter from '../pages/react-redux-toolkit/counter/Counter'
 import { AddPostFrom } from '../pages/react-redux-toolkit/posts/AddPostFrom'
 import PostsList from '../pages/react-redux-toolkit/posts/PostsList'
 import { AuthRoute } from './AuthRoute'
@@ -9,8 +10,8 @@ export const routesArray = [
         element: <AddPostFrom />,
     },
     {
-        path: '/welcome',
-        // element: <WelcomePage />,
+        path: '/redux-toolkit/counter',
+        element: <Counter/>,
     },
     {
         path: '/home',

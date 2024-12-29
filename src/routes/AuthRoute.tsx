@@ -1,19 +1,21 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import useUserDataStore from '../zustand/store/userDataStore';
 
-export const AuthRoute = ({ children }) => {
+
+type AuthRouteProps = {
+  children: ReactNode;
+}
+
+export const AuthRoute = ({ children }: AuthRouteProps) => {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   // const accessToken = useUserDataStore((state) => state.userDetails.accessToken);
   const accessToken = "test";
 
   useEffect(() => {
-    // Check for access token 
-
     setIsAuthenticated(!!accessToken);
 
-    // Redirect to the login page if not authenticated
     if (!accessToken) {
       navigate('/');
     }

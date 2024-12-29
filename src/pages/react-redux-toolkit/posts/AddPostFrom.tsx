@@ -40,7 +40,7 @@ export const AddPostFrom = () => {
                 <select name="postAuthor" id="postAuthor" onChange={(e) => setUserId(e.target.value)}>
                     <option value=""></option>
                     {
-                        users.map((user) => (
+                        users?.map((user) => (
                             <option key={user.id} value={user.id}>
                                 {user.name}
                             </option>

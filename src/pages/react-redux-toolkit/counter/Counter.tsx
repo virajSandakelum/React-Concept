@@ -1,7 +1,6 @@
 // es7 js, that RAFCE use
-
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment, reset, incrementByAmount } from './counterSlice'
+import { decrement, increment, reset, incrementByAmount } from '../../../redux-toolkit/slices/counterSlice'
 import { useState } from 'react';
 
 
