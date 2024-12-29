@@ -1,7 +1,7 @@
 import { getSessionStorage } from '../utils/sessionStorage'
 import api from './index'
 
-interface ChildData {
+type ChildData =  {
     name: string
     gender: string
     grade: string
@@ -10,16 +10,16 @@ interface ChildData {
     school_id: string
 }
 
-interface ChildUpdateData {
+type ChildUpdateData = {
     school_id: number
     grade: number
 }
 
-interface ChildRegistrationRequest {
+type ChildRegistrationRequest = {
     children: ChildData[]
 }
 
-interface ChildUpdateRequest {
+type ChildUpdateRequest = {
     children: ChildUpdateData[]
 }
 

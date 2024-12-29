@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const SystemMaintenance = () => {
-
     const animationContainer = useRef<HTMLDivElement>(null);
     const { t } = useTranslation()
     const navigate = useNavigate();
