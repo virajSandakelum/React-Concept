@@ -1,12 +1,11 @@
 // es7 js, that RAFCE use
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, reset, incrementByAmount } from '../../../redux-toolkit/slices/counterSlice'
-import { useState } from 'react';
-
+import { ChangeEvent, useState } from 'react';
 
 
 const Counter = () => {
-    const count = useSelector((state) => state.counter.count);
+    const count = useSelector((state:any) => state.counter.count);
     const dispatch = useDispatch();
 
     const [incrementAmount, setIncrementAmount] = useState(0);
@@ -33,7 +32,7 @@ const Counter = () => {
                 <input
                     type="text"
                     value={incrementAmount}
-                    onChange={(e) => setIncrementAmount(e.target.value)}
+                    onChange={(e:ChangeEvent<HTMLInputElement>) => setIncrementAmount(e.target.value)}
                 />
                 <button onClick={() => addAmount()}>Add Amount</button>
                 <button onClick={() => resetNum()}>Reset</button>

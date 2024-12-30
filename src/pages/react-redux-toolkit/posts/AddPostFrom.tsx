@@ -5,7 +5,6 @@ import { selectAllUsers } from "../../../redux-toolkit/slices/users/usersSlice"
 
 
 export const AddPostFrom = () => {
-
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [userId, setUserId] = useState("");
