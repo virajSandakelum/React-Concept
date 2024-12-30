@@ -10,7 +10,6 @@ export const AddPostFrom = () => {
     const [userId, setUserId] = useState("");
 
     const users = useSelector(selectAllUsers);
-
     const dispatch = useDispatch();
 
     const onSavaPostClicked = () => {
@@ -20,7 +19,6 @@ export const AddPostFrom = () => {
             setContent("");
         }
     }
-
 
     return (
         <section>
