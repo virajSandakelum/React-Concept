@@ -9,7 +9,6 @@ interface Course {
     completed: boolean;
 }
 
-// Define the store types
 interface CourseStore {
     courses: Course[];
     loading: boolean;
@@ -20,7 +19,6 @@ interface CourseStore {
     toggleCourseStatus: (courseId: string) => Promise<void>;
 }
 
-// Define the store logic
 const courseStore = (set: any): CourseStore => ({
     courses: [],
     loading: false,
@@ -78,11 +76,10 @@ const courseStore = (set: any): CourseStore => ({
     },
 });
 
-// Create the Zustand store with devtools and persist middleware
 const useCourseStore = create<CourseStore>()(
     devtools(
         persist(courseStore, {
-            name: "courses", // Key name in local storage
+            name: "courses", 
         })
     )
 );

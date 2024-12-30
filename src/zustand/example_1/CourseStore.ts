@@ -1,14 +1,12 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
-// Define the Course type
 interface Course {
     id: string;
     name: string;
     completed: boolean;
 }
 
-// Define the store types
 interface CourseStore {
     courses: Course[];
     addCourse: (course: Course) => void;
@@ -16,7 +14,6 @@ interface CourseStore {
     toggleCourseStatus: (courseId: string) => void;
 }
 
-// Define the store logic
 const courseStore = (set: any): CourseStore => ({
     courses: [],
     addCourse: (course) => {
@@ -38,11 +35,10 @@ const courseStore = (set: any): CourseStore => ({
     },
 });
 
-// Create the Zustand store with devtools and persist middleware
 const useCourseStore = create<CourseStore>()(
     devtools(
         persist(courseStore, {
-            name: "courses", // Key name in local storage
+            name: "courses", 
         })
     )
 );
